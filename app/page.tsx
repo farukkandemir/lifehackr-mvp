@@ -21,6 +21,7 @@ import {
   LightbulbIcon,
   Clock,
   Shield,
+  Video,
 } from "lucide-react";
 
 export default function Home() {
@@ -526,177 +527,138 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="relative px-4 py-24 overflow-hidden">
-        {/* Background with subtle gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-zinc-50/30 to-zinc-100/20"></div>
+      <section className="relative bg-gradient-to-b from-zinc-100/70 to-white py-20 overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-0 w-64 h-64 bg-zinc-200/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-64 h-64 bg-zinc-200/20 rounded-full blur-3xl"></div>
+        </div>
 
-        {/* Decorative elements - simplified */}
-        <div className="absolute top-20 right-0 w-64 h-64 bg-zinc-200/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-0 w-64 h-64 bg-zinc-200/20 rounded-full blur-3xl"></div>
-
-        <div className="relative max-w-6xl mx-auto">
-          <div className="text-center mb-16 space-y-3">
-            <div className="inline-flex items-center justify-center px-4 py-1.5 mb-2 text-sm font-medium text-zinc-700 bg-zinc-100 rounded-full">
-              <Users className="w-4 h-4 mr-2 text-zinc-600" />
+        <div className="container mx-auto px-4 sm:px-6 relative">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-zinc-800 mb-4">
               Real User Stories
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-800">
-              What Our Community Says
             </h2>
-            <p className="text-zinc-600 max-w-2xl mx-auto text-lg">
-              Join thousands of satisfied users who have transformed their daily
-              lives
+            <p className="text-zinc-600 max-w-2xl mx-auto">
+              See what our community members have to say about their experience
+              with LifeHackr.
             </p>
           </div>
 
-          {/* Large featured testimonial */}
-          <div className="mb-16">
-            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 relative overflow-hidden border border-zinc-100">
-              {/* Large quote mark decoration */}
-              <div className="absolute top-6 right-6 text-zinc-100">
-                <svg
-                  width="120"
-                  height="120"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10 11H6C5.46957 11 4.96086 10.7893 4.58579 10.4142C4.21071 10.0391 4 9.53043 4 9V7C4 6.46957 4.21071 5.96086 4.58579 5.58579C4.96086 5.21071 5.46957 5 6 5H8C8.53043 5 9.03914 5.21071 9.41421 5.58579C9.78929 5.96086 10 6.46957 10 7V15C10 16.0609 9.57857 17.0783 8.82843 17.8284C8.07828 18.5786 7.06087 19 6 19H5M20 11H16C15.4696 11 14.9609 10.7893 14.5858 10.4142C14.2107 10.0391 14 9.53043 14 9V7C14 6.46957 14.2107 5.96086 14.5858 5.58579C14.9609 5.21071 15.4696 5 16 5H18C18.5304 5 19.0391 5.21071 19.4142 5.58579C19.7893 5.96086 20 6.46957 20 7V15C20 16.0609 19.5786 17.0783 18.8284 17.8284C18.0783 18.5786 17.0609 19 16 19H15"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+          {/* Featured testimonial */}
+          <div className="bg-white rounded-xl shadow-sm border border-zinc-100 p-6 mb-8">
+            <div className="flex flex-col md:flex-row gap-6">
+              <div className="md:w-1/3">
+                <div className="aspect-square bg-zinc-100 rounded-lg"></div>
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
-                {/* Image column */}
-                <div className="md:col-span-2">
-                  <div className="relative aspect-square max-w-xs mx-auto">
-                    <div className="absolute inset-0 bg-gradient-to-br from-zinc-300/20 to-zinc-300/20 rounded-2xl transform rotate-3"></div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-zinc-300/20 to-zinc-300/20 rounded-2xl transform -rotate-3"></div>
-                    <div className="relative h-full w-full rounded-2xl overflow-hidden border-8 border-white shadow-lg">
-                      <div className="absolute inset-0 bg-gradient-to-br from-zinc-300 to-zinc-400 opacity-20"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-24 h-24 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-600 text-4xl font-bold">
-                          A
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <div className="md:w-2/3 flex flex-col justify-center">
+                <div className="mb-4">
+                  <svg
+                    className="w-8 h-8 text-zinc-300"
+                    fill="currentColor"
+                    viewBox="0 0 32 32"
+                    aria-hidden="true"
+                  >
+                    <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+                  </svg>
                 </div>
-
-                {/* Content column */}
-                <div className="md:col-span-3">
-                  <div className="flex flex-col h-full justify-center">
-                    <p className="text-xl md:text-2xl text-zinc-700 italic mb-6 leading-relaxed">
-                      "LifeHackr completely changed my approach to daily tasks.
-                      The productivity hacks alone have saved me countless
-                      hours, and the community support is incredible. It's like
-                      having a personal coach for every aspect of life!"
-                    </p>
-
-                    <div className="flex items-center">
-                      <div className="mr-4">
-                        <div className="font-bold text-lg">Alex Morgan</div>
-                        <div className="text-zinc-500">Marketing Director</div>
-                      </div>
-
-                      <div className="ml-auto flex">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className="w-5 h-5 text-zinc-400 fill-zinc-400"
-                          />
-                        ))}
-                      </div>
+                <blockquote className="text-xl font-medium text-zinc-800 mb-4">
+                  "I've tried dozens of productivity apps, but LifeHackr is
+                  different. The community-driven approach means I'm constantly
+                  discovering new ways to improve my daily routines."
+                </blockquote>
+                <div className="flex items-center">
+                  <div className="mr-4 w-12 h-12 rounded-full bg-zinc-100"></div>
+                  <div>
+                    <div className="font-medium text-zinc-900">
+                      David Nguyen
                     </div>
+                    <div className="text-zinc-500">Product Manager</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Regular testimonial cards in grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Regular testimonials */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-zinc-100 group hover:-translate-y-1 relative overflow-hidden"
+                className="bg-white rounded-xl shadow-sm border border-zinc-100 p-6"
               >
-                {/* Background gradient that appears on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-zinc-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                {/* Quote icon */}
-                <div className="relative z-10 w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="mb-4">
                   <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="text-zinc-600"
+                    className="w-6 h-6 text-zinc-300"
+                    fill="currentColor"
+                    viewBox="0 0 32 32"
+                    aria-hidden="true"
                   >
-                    <path
-                      d="M10 11H6C5.46957 11 4.96086 10.7893 4.58579 10.4142C4.21071 10.0391 4 9.53043 4 9V7C4 6.46957 4.21071 5.96086 4.58579 5.58579C4.96086 5.21071 5.46957 5 6 5H8C8.53043 5 9.03914 5.21071 9.41421 5.58579C9.78929 5.96086 10 6.46957 10 7V15C10 16.0609 9.57857 17.0783 8.82843 17.8284C8.07828 18.5786 7.06087 19 6 19H5M20 11H16C15.4696 11 14.9609 10.7893 14.5858 10.4142C14.2107 10.0391 14 9.53043 14 9V7C14 6.46957 14.2107 5.96086 14.5858 5.58579C14.9609 5.21071 15.4696 5 16 5H18C18.5304 5 19.0391 5.21071 19.4142 5.58579C19.7893 5.96086 20 6.46957 20 7V15C20 16.0609 19.5786 17.0783 18.8284 17.8284C18.0783 18.5786 17.0609 19 16 19H15"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
+                    <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
                   </svg>
                 </div>
-
-                {/* Star rating */}
-                <div className="flex items-center mb-4 relative z-10">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4 text-zinc-400 fill-zinc-400"
-                    />
-                  ))}
-                </div>
-
-                {/* Quote text */}
-                <p className="text-zinc-700 mb-6 italic relative z-10 group-hover:text-zinc-800 transition-colors">
-                  "{testimonial.quote}"
-                </p>
-
-                {/* Author info */}
-                <div className="flex items-center relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-600 font-semibold text-lg">
-                    {testimonial.name.charAt(0)}
+                <blockquote className="text-zinc-700 mb-4">
+                  {testimonial.quote}
+                </blockquote>
+                <div>
+                  <div className="font-medium text-zinc-900">
+                    {testimonial.name}
                   </div>
-                  <div className="ml-3">
-                    <div className="font-bold">{testimonial.name}</div>
-                    <div className="text-sm text-zinc-500 group-hover:text-zinc-600 transition-colors">
-                      {testimonial.title}
-                    </div>
-                  </div>
+                  <div className="text-zinc-500">{testimonial.title}</div>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Call to action button */}
-          <div className="mt-16 text-center">
-            <Button
-              className="bg-zinc-600 hover:bg-zinc-700 text-white rounded-full px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
-              asChild
-            >
-              <Link href="/testimonials">
-                <span className="font-medium">Read More Success Stories</span>
-                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
+      {/* Submit Your Hack CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-zinc-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm border border-zinc-100 overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="p-8 md:p-12 flex flex-col justify-center">
+                <div className="inline-flex items-center justify-center px-4 py-1.5 mb-4 text-sm font-medium text-zinc-700 bg-zinc-100 rounded-full">
+                  <LightbulbIcon className="w-4 h-4 mr-2 text-zinc-600" />
+                  Share your knowledge
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-zinc-800 mb-4">
+                  Got a brilliant life hack?
+                </h2>
+                <p className="text-zinc-600 mb-6">
+                  Share your innovative solutions with our community. Your hack
+                  could be featured on our trending page and help thousands of
+                  people.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button
+                    className="bg-zinc-800 hover:bg-zinc-700 text-white rounded-full px-6 py-6 shadow-sm hover:shadow transition-all duration-200 flex items-center gap-2"
+                    asChild
+                  >
+                    <Link href="/submit">
+                      <Video className="w-4 h-4" />
+                      Submit Your Hack
+                      <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+              <div className="bg-zinc-100 relative hidden md:block">
+                <div className="absolute inset-0 bg-gradient-to-br from-zinc-200/50 to-zinc-100/30">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-24 h-24 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                      <Video className="w-10 h-10 text-zinc-700" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative px-4 py-24 overflow-hidden">
+      {/* Final CTA Section */}
+      <section className="relative bg-zinc-900 text-white py-20">
         {/* Background with gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-zinc-700 via-zinc-800 to-zinc-900">
           {/* Animated particles */}

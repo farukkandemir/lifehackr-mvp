@@ -16,6 +16,7 @@ import {
   LogIn,
   Zap,
   Star,
+  Video,
 } from "lucide-react";
 import {
   NavigationMenu,
@@ -52,6 +53,12 @@ export const Navbar = () => {
       href: "/trending",
       active: pathname === "/trending",
       icon: <TrendingUp className="h-4 w-4" />,
+    },
+    {
+      label: "Submit a Hack",
+      href: "/submit",
+      active: pathname === "/submit",
+      icon: <Video className="h-4 w-4" />,
     },
     {
       label: "Categories",
