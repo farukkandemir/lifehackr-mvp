@@ -28,127 +28,259 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center px-4 py-20 md:py-32 overflow-hidden bg-gradient-to-br from-white to-zinc-50/50">
-        {/* Background elements - simplified */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 right-20 w-64 h-64 border border-zinc-200/30 rounded-lg transform rotate-12"></div>
-          <div className="absolute bottom-20 left-20 w-40 h-40 border border-zinc-200/30 rounded-lg transform -rotate-12"></div>
-          <div className="absolute top-40 left-1/4 w-20 h-20 border border-zinc-200/30 rounded-lg transform rotate-45"></div>
+      <section className="relative min-h-[90vh] flex items-center justify-center px-4 overflow-hidden bg-gradient-to-b from-zinc-50 via-white to-white">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Animated gradient circles */}
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-gradient-to-br from-zinc-200/40 to-zinc-100/40 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-gradient-to-tr from-zinc-200/40 to-zinc-100/40 rounded-full blur-3xl animate-pulse delay-1000"></div>
 
-          {/* Subtle accents */}
-          <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-zinc-300/0 via-zinc-300/20 to-zinc-300/0"></div>
-          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-zinc-300/0 via-zinc-300/20 to-zinc-300/0"></div>
+          {/* Decorative grid */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
 
-          {/* Transition to next section */}
-          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+          {/* Accent lines */}
+          <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-zinc-300/20 to-transparent"></div>
+          <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-zinc-300/20 to-transparent"></div>
         </div>
 
-        <div className="relative max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 text-center lg:text-left">
-            <div className="inline-flex items-center justify-center px-4 py-1.5 mb-4 text-sm font-medium text-zinc-700 bg-zinc-100 rounded-full">
-              <Zap className="w-4 h-4 mr-2 text-zinc-600" />
-              Join thousands discovering life-changing hacks daily
-            </div>
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-zinc-800">
-              Discover & Share the
-              <span className="block">Best Life Hacks</span>
-            </h1>
-            <p className="text-zinc-600 md:text-xl max-w-[500px] mx-auto lg:mx-0">
-              Your go-to platform for clever solutions that make everyday life
-              easier, more efficient, and more enjoyable.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <Button
-                size="lg"
-                className="bg-zinc-800 hover:bg-zinc-700 text-white shadow-lg hover:shadow-xl transition-all duration-200 gap-2 min-w-[160px] group rounded-full"
-                asChild
-              >
-                <Link href="/auth/register">
-                  <Users className="w-4 h-4" />
-                  Join Community
-                  <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="shadow-md hover:shadow-lg transition-all duration-200 gap-2 min-w-[160px] border-zinc-200 hover:border-zinc-300 hover:text-zinc-700 rounded-full"
-                asChild
-              >
-                <Link href="/trending">
-                  <TrendingUp className="w-4 h-4" />
-                  Explore Hacks
-                </Link>
-              </Button>
+        <div className="relative max-w-7xl mx-auto w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="relative z-10">
+              {/* Top badge */}
+              <div className="mb-16">
+                <div className="inline-flex items-center px-4 py-1.5 bg-white/80 backdrop-blur-sm shadow-sm rounded-full border border-zinc-100">
+                  <div className="flex items-center gap-3">
+                    <div className="flex -space-x-1.5">
+                      {[...Array(3)].map((_, i) => (
+                        <div
+                          key={i}
+                          className="w-6 h-6 rounded-full border-2 border-white bg-gradient-to-br from-zinc-400 to-zinc-500"
+                        ></div>
+                      ))}
+                      <div className="w-6 h-6 rounded-full border-2 border-white bg-zinc-100 flex items-center justify-center text-xs text-zinc-600 font-medium">
+                        +7
+                      </div>
+                    </div>
+                    <div className="h-4 w-px bg-zinc-200"></div>
+                    <div className="flex items-center gap-1.5">
+                      <Star className="w-3.5 h-3.5 text-zinc-600" />
+                      <span className="text-sm font-medium text-zinc-800">
+                        4.9/5
+                      </span>
+                      <span className="text-sm text-zinc-500">from users</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative">
+                {/* Floating accent */}
+                <div className="absolute -left-8 top-0 w-20 h-20 bg-gradient-to-br from-zinc-200/40 to-transparent rounded-full blur-2xl"></div>
+
+                {/* Main content */}
+                <div className="space-y-6">
+                  {/* Headline */}
+                  <div className="space-y-2">
+                    <div className="inline-flex items-center gap-2 text-zinc-500 text-lg">
+                      <Zap className="w-5 h-5" />
+                      <span>Welcome to LifeHackr</span>
+                    </div>
+                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800">
+                        Discover & Share
+                      </span>
+                      <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-zinc-700 to-zinc-900">
+                        Life Hacks
+                      </span>
+                    </h1>
+                  </div>
+
+                  {/* Description and features */}
+                  <div className="space-y-6 max-w-xl">
+                    <p className="text-lg text-zinc-600">
+                      Your go-to platform for clever solutions that make
+                      everyday life easier, more efficient, and more enjoyable.
+                    </p>
+
+                    {/* Feature pills */}
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        { icon: Clock, text: "Save Time" },
+                        { icon: ThumbsUp, text: "Proven Solutions" },
+                        { icon: Users, text: "Active Community" },
+                      ].map((feature, index) => (
+                        <div
+                          key={index}
+                          className="inline-flex items-center gap-1.5 px-3 py-1 bg-zinc-100 rounded-full text-sm text-zinc-600"
+                        >
+                          <feature.icon className="w-3.5 h-3.5" />
+                          {feature.text}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* CTA Buttons */}
+                  <div className="flex flex-col sm:flex-row items-start gap-4 pt-4">
+                    <Button
+                      size="lg"
+                      className="bg-zinc-800 hover:bg-zinc-700 text-white shadow-md hover:shadow-lg transition-all duration-300 rounded-full px-6 h-11 text-base group relative overflow-hidden w-full sm:w-auto"
+                      asChild
+                    >
+                      <Link href="/auth/register">
+                        <span className="relative z-10 flex items-center justify-center gap-2">
+                          <Users className="w-4 h-4" />
+                          Join Community
+                        </span>
+                        <span className="absolute inset-0 bg-gradient-to-r from-zinc-700 to-zinc-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                      </Link>
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="shadow-sm hover:shadow-md transition-all duration-300 rounded-full px-6 h-11 text-base border-zinc-200 hover:border-zinc-300 group w-full sm:w-auto"
+                      asChild
+                    >
+                      <Link href="/trending">
+                        <span className="flex items-center justify-center gap-2">
+                          <TrendingUp className="w-4 h-4" />
+                          Explore Hacks
+                        </span>
+                      </Link>
+                    </Button>
+                  </div>
+
+                  {/* Stats */}
+                  <div className="grid grid-cols-3 gap-6 pt-12 mt-4 border-t border-zinc-100">
+                    {[
+                      { label: "Active Users", value: "10K+", icon: Users },
+                      { label: "Life Hacks", value: "50K+", icon: Sparkles },
+                      { label: "Success Rate", value: "98%", icon: ThumbsUp },
+                    ].map((stat, index) => (
+                      <div key={index} className="text-center">
+                        <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-zinc-100 mb-3">
+                          {<stat.icon className="w-6 h-6 text-zinc-600" />}
+                        </div>
+                        <div className="font-semibold text-xl text-zinc-800">
+                          {stat.value}
+                        </div>
+                        <div className="text-sm text-zinc-500">
+                          {stat.label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Social proof */}
-            <div className="flex items-center justify-center lg:justify-start space-x-1 pt-4">
-              <div className="flex -space-x-2">
-                {[...Array(4)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="w-8 h-8 rounded-full border-2 border-white bg-gradient-to-br from-zinc-400 to-zinc-500"
-                  ></div>
-                ))}
+            {/* Right Content - Featured Cards Stack */}
+            <div className="relative h-[600px] hidden lg:block">
+              {/* Floating elements */}
+              <div className="absolute top-8 right-8 transform rotate-6 z-30">
+                <div className="bg-white/90 backdrop-blur-sm shadow-lg rounded-2xl p-4 border border-zinc-100">
+                  <div className="flex items-center gap-3">
+                    <Award className="w-6 h-6 text-zinc-600" />
+                    <span className="text-sm font-medium text-zinc-800">
+                      Most Popular Hack
+                    </span>
+                  </div>
+                </div>
               </div>
-              <div className="ml-2 text-sm text-zinc-600">
-                <span className="font-semibold">4.9/5</span> from over 10,000
-                users
-              </div>
-            </div>
-          </div>
 
-          {/* Hero illustration */}
-          <div className="hidden lg:flex justify-center items-center">
-            <div className="relative w-full max-w-md">
-              <div className="absolute inset-0 bg-gradient-to-br from-zinc-300/20 via-zinc-300/20 to-zinc-300/20 rounded-2xl transform rotate-3"></div>
-              <div className="relative bg-white p-8 rounded-2xl shadow-xl border border-zinc-100">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center">
-                    <Star className="w-5 h-5 text-zinc-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-zinc-800">
-                      Top Rated Hack
-                    </h3>
-                    <p className="text-xs text-zinc-500">24.5K views</p>
-                  </div>
-                  <div className="ml-auto flex items-center gap-1 bg-zinc-100 text-zinc-700 px-2 py-1 rounded-full text-xs font-medium">
-                    <ThumbsUp className="w-3 h-3" /> 98% Success
+              {/* Main card stack */}
+              <div className="relative w-full h-full">
+                {/* Background card */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] h-[500px] bg-white rounded-2xl shadow-xl border border-zinc-100 rotate-[-12deg]"></div>
+
+                {/* Middle card */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] h-[500px] bg-white rounded-2xl shadow-xl border border-zinc-100 rotate-[-6deg]"></div>
+
+                {/* Front card */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] h-[500px] bg-white rounded-2xl shadow-2xl border border-zinc-100">
+                  <div className="relative h-full p-6 flex flex-col">
+                    {/* Card header */}
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center">
+                          <Star className="w-5 h-5 text-zinc-600" />
+                        </div>
+                        <div>
+                          <div className="font-semibold text-zinc-800">
+                            Featured Hack
+                          </div>
+                          <div className="text-xs text-zinc-500">
+                            24.5K views
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-1 bg-zinc-100 text-zinc-700 px-3 py-1.5 rounded-full text-xs font-medium">
+                        <ThumbsUp className="w-3 h-3" /> 98% Success
+                      </div>
+                    </div>
+
+                    {/* Card content */}
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold mb-3">
+                        Double Your Phone Battery Life
+                      </h3>
+                      <p className="text-zinc-600 text-sm mb-6">
+                        Simple settings changes that can dramatically improve
+                        your smartphone's battery performance.
+                      </p>
+
+                      <div className="space-y-4">
+                        {[1, 2, 3].map((_, i) => (
+                          <div key={i} className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-600 font-medium">
+                              {i + 1}
+                            </div>
+                            <div className="flex-1 h-2 bg-zinc-100 rounded-full"></div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Card footer */}
+                    <div className="flex items-center justify-between pt-6 border-t border-zinc-100">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center text-white text-sm font-medium">
+                          M
+                        </div>
+                        <span className="text-sm text-zinc-600">
+                          Michael C.
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="h-8 w-8 p-0"
+                        >
+                          <Share2 className="w-4 h-4 text-zinc-500" />
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="h-8 w-8 p-0"
+                        >
+                          <ThumbsUp className="w-4 h-4 text-zinc-500" />
+                        </Button>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <h4 className="text-lg font-semibold mb-2">
-                  Double Your Phone Battery Life
-                </h4>
-                <p className="text-sm text-zinc-600 mb-4">
-                  Simple settings changes that can dramatically improve your
-                  smartphone's battery performance.
-                </p>
-
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-600 font-semibold text-xs">
-                      M
-                    </div>
-                    <span className="text-xs text-zinc-500">Michael C.</span>
+                {/* Floating engagement indicators */}
+                <div className="absolute -right-6 top-1/3 transform rotate-12">
+                  <div className="bg-white shadow-lg rounded-full p-3">
+                    <HeartIcon className="w-5 h-5 text-red-500 fill-red-500" />
                   </div>
-                  <div className="flex items-center gap-1">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="h-8 w-8 p-0 rounded-full"
-                    >
-                      <Share2 className="w-4 h-4 text-zinc-500" />
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="h-8 w-8 p-0 rounded-full"
-                    >
-                      <ThumbsUp className="w-4 h-4 text-zinc-500" />
-                    </Button>
+                </div>
+                <div className="absolute -left-4 bottom-1/3 transform -rotate-12">
+                  <div className="bg-white shadow-lg rounded-full p-3">
+                    <ThumbsUp className="w-5 h-5 text-zinc-600" />
                   </div>
                 </div>
               </div>
